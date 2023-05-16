@@ -37,6 +37,11 @@ $hotels = [
           'distance_to_center' => 50
       ],
   ];
+  $showParking = false;
+  if (isset ($_POST ['parking'])){
+    $showParking = true;
+  }
+
 
 ?>
 
@@ -51,8 +56,12 @@ $hotels = [
 </head>
 <body>
   <div class="container text-center">
+    <form action="index.php" method="POST">
+      <button type="submit" name="parking" class="btn btn-warning">Mostra solo gli hotel con parcheggio</button>
+    </form>
   <ul>
     <?php foreach($hotels as $hotel): ?>
+      <?php if ($showParking && !$hotel['parking']) continue; ?>
     <li>
       <h2> <?php echo $hotel['name']; ?> </h2>
       <p> <?php echo $hotel['description']; ?> </p>
