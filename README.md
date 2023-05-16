@@ -18,3 +18,6 @@
     -  per fare in modo di visualizzare nuovamente tutti gli hotel dopo aver visualizzato solo quelli con parcheggio
       aggiungo infine alla logica di $showparking un else elseif (isset($_POST['show_all'])) {
     $showParking = false;} che unito al bottone con name "show_all" riporta showparking al valore iniziale false e mostra nuovamente tutti gli hotel.
+
+    -cliccando su show all shoparking e false. l'istruzione     <?php if ($showParking && !$hotel['parking']) continue; ?>
+ diventa sempre false, indipendentemente dal valore di $hotel['parking']. Questo significa che l'istruzione continue; non viene mai eseguita, quindi il ciclo non salta mai alcun hotel e tutti gli hotel vengono mostrati.
