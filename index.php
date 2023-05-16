@@ -40,7 +40,9 @@ $hotels = [
   $showParking = false;
   if (isset ($_POST ['parking'])){
     $showParking = true;
-  }
+  }elseif (isset($_POST['show_all'])) {
+    $showParking = false;
+}
 
 
 ?>
@@ -57,7 +59,12 @@ $hotels = [
 <body>
   <div class="container text-center">
     <form action="index.php" method="POST">
+      <?php if (!$showParking): ?>
       <button type="submit" name="parking" class="btn btn-warning">Mostra solo gli hotel con parcheggio</button>
+      <?php else: ?>
+      <button type="submit" name="show_all" class="btn btn-warning"> Mostra tutti gli Hotel</button>  
+      <?php endif; ?>
+        
     </form>
   <ul>
     <?php foreach($hotels as $hotel): ?>
@@ -104,6 +111,11 @@ $hotels = [
         }
         li {
             margin-bottom: 20px;
+        }
+
+        .btn {
+            margin-bottom: 60px;
+            padding: 20px 20px;
         }
     </style>
 

@@ -12,4 +12,9 @@
       <?php if ($showParking && !$hotel['parking']) continue; ?>
       che dice che siccome  voglio  mostrare solo gli hotel con parcheggio ($showParking è true)  se ad esempio un  hotel non ha parcheggio ($hotel['parking'] è false), allora salta questo hotel (utilizzando continue) e passa al prossimo.
 
-      per stampare gli hotel con parcheggio ho usato continue che salta alla prossima iterazione del ciclo qualora l'hotel non rispetti le condizioni desiderate, in questo caso la presenza di parcheggio.
+     - per stampare gli hotel con parcheggio ho usato continue che salta alla prossima iterazione del ciclo qualora l'hotel non rispetti le condizioni desiderate, in questo caso la presenza di parcheggio.
+
+
+    -  per fare in modo di visualizzare nuovamente tutti gli hotel dopo aver visualizzato solo quelli con parcheggio
+      aggiungo infine alla logica di $showparking un else elseif (isset($_POST['show_all'])) {
+    $showParking = false;} che unito al bottone con name "show_all" riporta showparking al valore iniziale false e mostra nuovamente tutti gli hotel.
