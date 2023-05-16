@@ -10,6 +10,6 @@
 
 - per stampare gli hotel con parcheggio ho aggiunto questa riga nel ciclo for each
       <?php if ($showParking && !$hotel['parking']) continue; ?>
-      che dice che dato che voglio  mostrare solo gli hotel con parcheggio ($showParking è true) e questo hotel non ha parcheggio ($hotel['parking'] è false), allora salta questo hotel (utilizzando continue) e passa al prossimo.
+      che dice che siccome  voglio  mostrare solo gli hotel con parcheggio ($showParking è true)  se ad esempio un  hotel non ha parcheggio ($hotel['parking'] è false), allora salta questo hotel (utilizzando continue) e passa al prossimo.
 
-      per stampare gli hotel con parcheggio ho usato continue che salta alla prossima iterazione del ciclo qualora l'hotel non abbia parcheggio.
+      per stampare gli hotel con parcheggio ho usato continue che salta alla prossima iterazione del ciclo qualora l'hotel non rispetti le condizioni desiderate, in questo caso la presenza di parcheggio.
